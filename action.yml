@@ -28,7 +28,8 @@ runs:
       shell: bash
       run: deno install -A --name documentaly https://deno.land/x/documentaly/mod.ts
     - name: Fetch base branch
-      env: ${{ env.BASE_BRANCH }}
+      env: 
+        BASE_BRANCH: ${{ env.BASE_BRANCH }}
       shell: bash
       run: git fetch origin ${BASE_BRANCH}
     - name: Check to publish documents
@@ -42,8 +43,8 @@ runs:
         documentaly publish
         deno run -A mod.ts publish
         $(gh pr diff ${PR_NUMBER} --name-only | grep '\.md$' | tr "\n" " "  )
-        --notion-api-key ${{ env.NOTION_API_TOKEN }}
-        --zendesk-api-auth-header ${{ env.ZENDESK_API_AUTH_HEADER }}
+        --notion-api-key ${NOTION_API_TOKEN}
+        --zendesk-api-auth-header ${ZENDESK_API_AUTH_HEADER}
         > result.md
     - name: Make comment on pull request when this action was pull request event.
       env:
