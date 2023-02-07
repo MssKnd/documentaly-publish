@@ -41,7 +41,6 @@ runs:
       shell: bash
       run: >
         documentaly publish
-        deno run -A mod.ts publish
         $(gh pr diff ${PR_NUMBER} --name-only | grep '\.md$' | tr "\n" " "  )
         --notion-api-key ${NOTION_API_TOKEN}
         --zendesk-api-auth-header ${ZENDESK_API_AUTH_HEADER}
