@@ -5,7 +5,7 @@ branding:
   icon: file-text
   color: green
 inputs:
-  GH_TOKEN:
+  GITHUB_TOKEN:
     # description: 'ex. ${{ secrets.GITHUB_TOKEN }}'
     required: true
   BASE_BRANCH:
@@ -36,7 +36,7 @@ runs:
       env:
         NOTION_API_TOKEN: ${{ env.NOTION_API_TOKEN }}
         ZENDESK_API_AUTH_HEADER: ${{ env.ZENDESK_API_AUTH_HEADER }}
-        GH_TOKEN: ${{ env.GH_TOKEN }}
+        GH_TOKEN: ${{ env.GITHUB_TOKEN }}
         PR_NUMBER: ${{ github.event.pull_request.number }}
       shell: bash
       run: >
@@ -47,7 +47,7 @@ runs:
         > result.md
     - name: Make comment on pull request when this action was pull request event.
       env:
-        GH_TOKEN: ${{ env.GH_TOKEN }}
+        GH_TOKEN: ${{ env.GITHUB_TOKEN }}
         PR_NUMBER: ${{ github.event.pull_request.number }}
       shell: bash
       run: >
