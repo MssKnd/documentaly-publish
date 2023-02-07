@@ -1,6 +1,6 @@
 name: documentaly-publish
-author: mssknd
-description: Publish markdown to platforms
+author: MssKnd
+description: Publish markdown to several platforms
 branding:
   icon: file-text
   color: green
