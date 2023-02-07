@@ -5,7 +5,7 @@ branding:
   icon: file-text
   color: green
 inputs:
-  GITHUB_TOKEN:
+  GH_TOKEN:
     # description: 'ex. ${{ secrets.GITHUB_TOKEN }}'
     required: true
   BASE_BRANCH:
