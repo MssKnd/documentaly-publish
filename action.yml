@@ -45,6 +45,9 @@ runs:
         --notion-api-key ${NOTION_API_TOKEN}
         --zendesk-api-auth-header ${ZENDESK_API_AUTH_HEADER}
         > result.md
+    - name: test
+      shell: bash
+      run: cat result.md
     - name: Make comment on pull request when this action was pull request event.
       env:
         GH_TOKEN: ${{ env.GITHUB_TOKEN }}
