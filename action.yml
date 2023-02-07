@@ -5,9 +5,6 @@ branding:
   icon: file-text
   color: green
 inputs:
-  GITHUB_TOKEN:
-    # description: 'ex. ${{ secrets.GITHUB_TOKEN }}'
-    required: true
   BASE_BRANCH:
     description: 'Base branch name (default: main)'
     default: main
