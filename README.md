@@ -1,4 +1,4 @@
-# documentaly publish (Bata)
+# documentaly publish (Beta)
 
 This GitHub Actions can publish markdown to several platforms.
 
